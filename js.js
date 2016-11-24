@@ -32,13 +32,13 @@ for (i=0; i<document.querySelectorAll('#savedGismos a').length; i++) {
 /* Update preview panel when changes are made to the HTML panel and when page loads. */
 function updatePreview() {
 	renderParent.innerHTML = sourceE.textContent;
-} updatePreview();
+}
 sourceE.oninput = updatePreview;
 
 /* Update HTML panel when changes are made to the preview panel. */
 function updateHTML() {
 	sourceE.textContent = renderParent.innerHTML;
-}
+} updateHTML();
 renderParent.oninput = updateHTML;
 
 /* Make the preview panel editable. */
