@@ -1,9 +1,17 @@
 // get elements
-var renderParent  = document.getElementById('result'),
-sourceE     = document.getElementById('source'),
-//sidebar   = document.getElementById('sidebar'),
-savedGismos = document.getElementById('savedGismos'),
-savebtn     = document.getElementById('save');
+var renderParent = document.getElementById('result'),
+main             = document.getElementById('main'),
+sourceParent     = document.getElementById('source'),
+//sidebar        = document.getElementById('sidebar'),
+savedGismos      = document.getElementById('savedGismos'),
+savebtn          = document.getElementById('save');
+
+
+// Create a CodeMirror instance
+var editor = CodeMirror(main, {
+	lineNumbers: true,
+	mode: 'htmlmixed'
+});
 
 /*function parseURL(hash) {
 	if(!hash) {
@@ -16,7 +24,7 @@ savebtn     = document.getElementById('save');
 	    lstl = lst.length;
 	for(var i = 0; i < lstl; i++) {
 	    if( lst[i] === escape(hash) ) {
-			sourceE.textContent = unescape(ls.sourceE.split(',')[i]);
+			sourceParent.textContent = unescape(ls.sourceParent.split(',')[i]);
 		}
 	}
 	return false;
@@ -31,13 +39,13 @@ for (i=0; i<document.querySelectorAll('#savedGismos a').length; i++) {
 
 /* Update preview panel when changes are made to the HTML panel and when page loads. */
 function updatePreview() {
-	renderParent.innerHTML = sourceE.textContent;
+	renderParent.innerHTML = editor.getValue();
 }
-sourceE.oninput = updatePreview;
+editor.on('change', updatePreview);
 
 /* Update HTML panel when changes are made to the preview panel. */
 function updateHTML() {
-	sourceE.textContent = renderParent.innerHTML;
+	editor.setValue(renderParent.innerHTML);
 } updateHTML();
 renderParent.oninput = updateHTML;
 

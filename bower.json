@@ -1,0 +1,20 @@
+{
+  "name": "html-previewer",
+  "homepage": "https://github.com/Daniel-Hug/html-previewer",
+  "authors": [
+    "Daniel Hug <daniel@hugwebdesign.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "codemirror": "^5.19.0"
+  }
+}

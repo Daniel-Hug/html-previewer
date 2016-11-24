@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>online WYSIWYG HTML editor &amp; previewer</title>
+	<link rel="stylesheet" href="bower_components/codemirror/lib/codemirror.css">
 	<link rel="stylesheet" href="css.css">
-	<link rel="stylesheet" href="scripts/google-code-pretify/pretify.min.css">
 </head>
 <body>
 
@@ -25,11 +25,18 @@
 	<h2>If you love <abbr title="HyperText Markup Language">HTML</abbr>:</h2>
 	<p>...then type or paste some <abbr title="HyperText Markup Language">HTML</abbr> into the box below, and this preview pane will automagically render the result!</p>
 </article></div>
-	<code id="source" contenteditable></code>
 </section>
 
+
+<!-- CodeMirror JS -->
+<script src="bower_components/codemirror/lib/codemirror.js"></script>
+<script src="bower_components/codemirror/mode/xml/xml.js"></script>
+<script src="bower_components/codemirror/mode/javascript/javascript.js"></script>
+<script src="bower_components/codemirror/mode/css/css.js"></script>
+<script src="bower_components/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+<!-- App JS -->
 <script src="js.js"></script>
-<script src="scripts/google-code-pretify/pretify.min.js"></script>
 
 </body>
 </html>
