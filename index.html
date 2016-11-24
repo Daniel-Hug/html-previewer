@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>online WYSIWYG HTML editor &amp; previewer</title>
+	<link rel="stylesheet" href="css.css">
+	<link rel="stylesheet" href="scripts/google-code-pretify/pretify.min.css">
+</head>
+<body>
+
+<section id="sidebar">
+	<button id="save">Save Your Gismo</button>
+	<ul id="savedGismos">
+		<li><a href="#Default Template" onclick="parseURL(this.href.split('#')[1])">Default Gismo</a></li>
+	</ul>
+</section>
+
+<section id="main">
+	<iframe id="result"></iframe>
+	<code id="source" contenteditable>&lt;article&gt;
+	&lt;h1&gt;Welcome to the online &lt;abbr title="What You See Is What You Get"&gt;WYSIWYG&lt;/abbr&gt; &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; editor&lt;/h1&gt;
+
+	&lt;h2&gt;If you love Rich text editors:&lt;/h2&gt;
+	&lt;p&gt;...then go to a website, and select the parts you wish to keep. Copy your selection (&lt;kbd&gt;Ctrl + C&lt;/kbd&gt;), then paste it into this panel, and the &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; panel below will be automagically updated with the &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; from that snippet.&lt;/p&gt;
+
+	&lt;h2&gt;If you love &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;:&lt;/h2&gt;
+	&lt;p&gt;...then type or paste some &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; into the box below, and this preview pane will automagically render the result!&lt;/p&gt;
+&lt;/article&gt;</code>
+</section>
+
+<script src="js.js"></script>
+<script src="scripts/google-code-pretify/pretify.min.js"></script>
+
+</body>
+</html>
