@@ -56,3 +56,19 @@ body {
 ::-webkit-scrollbar-corner {
 	background: transparent;
 }
+
+
+/* only print preview */
+@media print {
+    #sidebar, #source {
+        display: none;
+    }
+
+    #main {
+        padding: 0;
+    }
+
+    #result {
+        height: auto;
+    }
+}
