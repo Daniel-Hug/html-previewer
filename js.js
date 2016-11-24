@@ -1,20 +1,14 @@
-// a few baseline variables:
-var w = window,            // window object
-    d = w.document,        // document object
-    l = w.location,        // location object
-    b = d.body,            // <body> element
-    h = d.documentElement; // <html> element
-
-var  iframe = w.frames[0].document.body,
-     sourceE = d.getElementById('source'),
-  //sidebar = d.getElementById('sidebar'),
-savedGismos = d.getElementById('savedGismos'),
-    savebtn = d.getElementById('save');
+// get elements
+var iframe  = document.getElementById('result'),
+sourceE     = document.getElementById('source'),
+//sidebar   = document.getElementById('sidebar'),
+savedGismos = document.getElementById('savedGismos'),
+savebtn     = document.getElementById('save');
 
 /*function parseURL(hash) {
 	if(!hash) {
-		if(l.href.split('#')[1]) {
-			var hash = l.href.split('#')[1];
+		if(location.href.split('#')[1]) {
+			var hash = location.href.split('#')[1];
 		}
 	}
 	var ls   = localStorage,
@@ -28,10 +22,10 @@ savedGismos = d.getElementById('savedGismos'),
 	return false;
 } parseURL();*/
 
-/*gismoLinks = d.querySelectorAll('#savedGismos a');
-for (i=0; i<d.querySelectorAll('#savedGismos a').length; i++) {
-	alert(d.querySelectorAll('#savedGismos a')[i]);
-	d.querySelectorAll('#savedGismos a')[i].onClick = parseURL(d.querySelectorAll('#savedGismos a')[i].href.split('#')[1]);
+/*gismoLinks = document.querySelectorAll('#savedGismos a');
+for (i=0; i<document.querySelectorAll('#savedGismos a').length; i++) {
+	alert(document.querySelectorAll('#savedGismos a')[i]);
+	document.querySelectorAll('#savedGismos a')[i].onClick = parseURL(document.querySelectorAll('#savedGismos a')[i].href.split('#')[1]);
 }*/
 
 
