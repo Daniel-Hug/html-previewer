@@ -1,5 +1,5 @@
 // get elements
-var iframe  = document.getElementById('result'),
+var renderParent  = document.getElementById('result'),
 sourceE     = document.getElementById('source'),
 //sidebar   = document.getElementById('sidebar'),
 savedGismos = document.getElementById('savedGismos'),
@@ -31,19 +31,20 @@ for (i=0; i<document.querySelectorAll('#savedGismos a').length; i++) {
 
 /* Update preview panel when changes are made to the HTML panel and when page loads. */
 function updatePreview() {
-	iframe.innerHTML = sourceE.textContent;
+	renderParent.innerHTML = sourceE.textContent;
 } updatePreview();
 sourceE.oninput = updatePreview;
 
 /* Update HTML panel when changes are made to the preview panel. */
 function updateHTML() {
-	sourceE.textContent = iframe.innerHTML;
+	sourceE.textContent = renderParent.innerHTML;
 }
-iframe.oninput = updateHTML;
+renderParent.oninput = updateHTML;
 
 /* Make the preview panel editable. */
-iframe.contentEditable = "true";
-frames[0].document.designMode = "on";
+renderParent.contentEditable = "true";
+// for iframe:
+// frames[0].document.designMode = "on";
 
 
 
@@ -52,7 +53,7 @@ frames[0].document.designMode = "on";
  */
 function saveGismo() {
 	var title = prompt('Give it a name:'),
-	     html = iframe.innerHTML;
+	     html = renderParent.innerHTML;
 	if (localStorage.title) {
 		localStorage.title += ',' + escape(title);
 		localStorage.html += ',' + escape(html);
@@ -84,8 +85,8 @@ function listGismos() {
 // update gismo list:
 function updateGismos() {
 	var titles = localStorage.title.split(','),
-	     title = unescape(titles[titles.length - 1]),
-            li = document.createElement('li');
+	title = unescape(titles[titles.length - 1]),
+    li = document.createElement('li');
     li.innerHTML = '<a href="#' + title + '">' + title + '</a>';
 	savedGismos.insertBefore(li,savedGismos.children[1]);
 }
